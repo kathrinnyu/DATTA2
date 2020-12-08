@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINALLY DONE!!!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+    
+          var i = 0;
+          var txt = 'yay.';
+          var speed = 50;
+
+          function typeWriter() {
+            if (i < txt.length) {
+              document.getElementById("dialogue").innerHTML += txt.charAt(i);
+              i++;
+              setTimeout(typeWriter, speed);
+            }
+          }
+
+      </script>
+
+</head>
+<body>
+  
+  <div id="container">
+    <div id="innercontainernight">
+      
+    <button id="dialogueButton" onclick="typeWriter()"></button>
+
+    <p id="dialogue"></p>
+  
+    <div>
+        <img class="dusk" src="images/finallydone.svg" alt="Nighttime Room">  
+    </div>
+  
+  <div class="nightTime">
+    <p>
+      5:00:00 AM
+    </p>
+  </div>
+  
+  <div id="DialogueBox">
+  </div>
+
+    <a href="pageTwo.html">
+    <img class="bed" src="images/nightbed.svg" alt="bed">
+    </a>
+
+    <audio controls autoplay loop>
+      <source src="audio/Midnight(Lo-fi Hip-Hop Beat)[Free Creative Commons License] _Free Download_.mp3.mov" type="audio/mp3">
+      <source src="audio/Midnight(Lo-fi Hip-Hop Beat)[Free Creative Commons License] _Free Download_.mp3.mov" type="audio/mp3">
+    Your browser does not support the audio element.
+    </audio>
+
+    </div>
+  </div>
+
+
+</body>
+</html>

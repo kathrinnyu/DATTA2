@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procrastinate</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        function newImage(arg) {
+            if (document.images) {
+                rslt = new Image();
+                rslt.src = arg;
+                return rslt;
+            }
+        }
+        
+        function simplechangeImage(image, newimage) {
+             var Image2Change = document.getElementById(image);
+             var newSrc = newimage;
+            Image2Change.src = newSrc;
+        }
+        
+        
+        var preloadFlag = false;
+        
+        function preloadImages() {
+            if (document.images) {
+                img1 = newImage("images/phoneOn.svg");
+                img2 = newImage("images/phoneOff.svg");
+        
+                preloadFlag = true;
+            }
+        }
+        
+          var i = 0;
+          var txt = ' *scroll* *scroll* *scroll* Procrastination at its finest.';
+          var speed = 50;
+
+          function typeWriter() {
+            if (i < txt.length) {
+              document.getElementById("dialogue").innerHTML += txt.charAt(i);
+              i++;
+              setTimeout(typeWriter, speed);
+            }
+          }
+      </script>
+
+</head>
+<body>
+
+    <div id="container">
+        <div id="innercontainer">
+          
+        <button id="dialogueButton" onclick="typeWriter()"></button>
+    
+        <p id="dialogue"></p>
+      
+        <div>
+            <img class="dusk" src="images/procrastinate.png" alt="Scrolling on Phone">
+        </div>
+      
+      <div class="firstTime">
+        <p>
+          7:00:00 PM
+        </p>
+      </div>
+      
+      <div id="DialogueBox">
+      </div>
+
+      <a href="pageSeven.html"><img class="pinkDoor" src="images/door.svg" alt="Door"></a>
+    
+      <audio controls autoplay loop>
+        <source src="audio/Midnight(Lo-fi Hip-Hop Beat)[Free Creative Commons License] _Free Download_.mp3.mov" type="audio/mp3">
+        <source src="audio/Midnight(Lo-fi Hip-Hop Beat)[Free Creative Commons License] _Free Download_.mp3.mov" type="audio/mp3">
+      Your browser does not support the audio element.
+      </audio>
+              
+        </div>
+    </div>
+    
+</body>
+</html>

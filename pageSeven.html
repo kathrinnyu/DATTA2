@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Time</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        function newImage(arg) {
+            if (document.images) {
+                rslt = new Image();
+                rslt.src = arg;
+                return rslt;
+            }
+        }
+        
+        function simplechangeImage(image, newimage) {
+             var Image2Change = document.getElementById(image);
+             var newSrc = newimage;
+            Image2Change.src = newSrc;
+        }
+        
+        
+        var preloadFlag = false;
+        
+        function preloadImages() {
+            if (document.images) {
+                img1 = newImage("images/microwave.svg");
+                img2 = newImage("images/microwaveon.svg");
+                img3 = newImage("images/cup.svg");
+                img4 = newImage("images/coffee.svg");
+                
+                preloadFlag = true;
+            }
+        }
+        
+          var i = 0;
+          var txt = 'Time to make some ramen and coffee. It is gonna be such a LONG night. *sigh*';
+          var speed = 50;
+
+          function typeWriter() {
+            if (i < txt.length) {
+              document.getElementById("dialogue").innerHTML += txt.charAt(i);
+              i++;
+              setTimeout(typeWriter, speed);
+            }
+          }
+      </script>
+
+</head>
+<body>
+  
+  <div id="container">
+    <div id="innercontainer">
+      
+    <button id="dialogueButton" onclick="typeWriter()"></button>
+
+    <p id="dialogue"></p>
+  
+    <div>
+        <img class="kitchen" src="images/kitchen.svg" alt="kitchen">  
+    </div>
+  
+  <div class="firstTime">
+    <p>
+      9:00:00 PM
+    </p>
+  </div>
+  
+  <div id="DialogueBox">
+  </div>
+
+    <a href="pageEight.html">
+    <img class="door" src="images/kitchendoor.svg" alt="door">
+    </a>
+
+        <body onload="preloadImages();">
+        
+        <p><br>
+        <a href="#" onmouseover="simplechangeImage('Image', 'images/microwaveon.svg'); return true;"
+                    onmouseout="simplechangeImage('Image', 'images/microwave.svg'); return true;"><img class="microwave" id="Image" src="images/microwave.svg" alt="microwave"></a></p>
+          
+        <a href="#" onmouseover="simplechangeImage('Image2', 'images/coffee.svg'); return true;"
+                    onmouseout="simplechangeImage('Image2', 'images/cup.svg'); return true;"><img class="coffee" id="Image2" src="images/coffee.svg" alt="cup and waterpot"></a></p>
+
+                    <audio controls autoplay loop>
+                      <source src="audio/Midnight(Lo-fi Hip-Hop Beat)[Free Creative Commons License] _Free Download_.mp3.mov" type="audio/mp3">
+                      <source src="audio/Midnight(Lo-fi Hip-Hop Beat)[Free Creative Commons License] _Free Download_.mp3.mov" type="audio/mp3">
+                    Your browser does not support the audio element.
+                    </audio>
+
+          </div>
+    </div>
+</body>
+
+</html>
